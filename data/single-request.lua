@@ -1,0 +1,6 @@
+-- example HTTP POST script which demonstrates setting the
+-- HTTP method, body, and adding a header
+wrk.method = "POST"
+wrk.body   = '{"scm": {"credentials-id": "1e694ba12d64470bb68b5bc8d110f5cf", "branches": ["master"], "url": "http://172.24.6.123/root/dcos-package-demo.git", "hook_config": {"push_events": 1, "enable_ssl_verification": 1}, "gitlab_project_id": 3, "plugin_id": "gitlab"}, "trigger": {"plugin_id": "gitlab"}, "name": "\\u4e2d\\u6587", "docker_file": {"codeStoragePath": "/code/hermes", "compileCmd": "pip install -r requirements/common.txt", "compileEnv": "", "baseImageName": "python", "installCmd": "", "baseImageRegistry": "", "startCmd": "python manage.py runserver", "baseImageTag": "2.7", "workDir": "/code/hermes", "user": "root"}, "builder": {"repo-name": "hermes-test", "plugin_id": "docker-build-publish", "repo-tag": "latest", "registry": "http://172.24.6.173:5000", "file-path": "ddcos-inject-Dockerfile"}, "docker_file_custom": "", "type": "default", "maven_config": {}, "wrapper": {"plugin_id": "build-keeper"}, "description": "description"}'
+wrk.headers["Content-Type"] = "application/json"
+wrk.headers["X-Auth-Token"] = "28d6788e345948aeb0a4bc87f272c8a9"
