@@ -1,0 +1,1 @@
+wrk -c20 -t8 -d30s -T30s -s /data/multi_request.lua http://172.24.6.220:30006
